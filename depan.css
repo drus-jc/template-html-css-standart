@@ -1,0 +1,87 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background-image: url(galery/depan.png);
+    background-size: cover; /* Pastikan gambar latar belakang menutupi area */
+    position: relative;
+}
+.background {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s ease;
+}
+.camera {
+    width: 150px; /* Ukuran kamera disesuaikan */
+    height: 150px; /* Ukuran kamera disesuaikan */
+    border: 8px solid #fff;
+    border-radius: 50%; /* Membuat kamera menjadi bulat */
+    background-color: #bb8b8b; /* Warna kamera */
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Tambahkan bayangan */
+}
+.camera:before {
+    content: '';
+    position: absolute;
+    top: 35%; /* Posisi lensa di dalam kamera */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px; /* Ukuran lensa disesuaikan */
+    height: 40px; /* Ukuran lensa disesuaikan */
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff 10%, #ccc 100%);
+}
+.hidden-button {
+    position: absolute;
+    top: 30%;
+    /*Memastikantombolberadaditengahvertikal*/left: 0%;
+    /*Memastikantombolberadaditengahhorizontal*/transform: translate(-50%, -50%);
+    /*Memindahkantombolketengah*/opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /*Ukuranfontdisesuaikan*/color: white;
+    cursor: pointer;
+    transform: scale(0.8);
+}
+.hidden-button:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    transform: scale(1); /* Ukuran tombol tetap saat hover */
+}
+.open-camera {
+    transform: scale(1.5) rotate(360deg);
+    box-shadow: 0 0 30px rgba(102, 109, 131, 0.7);
+    text-shadow: 2;
+    -webkit-transform: scale(1.5) rotate(360deg);
+    -moz-transform: scale(1.5) rotate(360deg);
+    -ms-transform: scale(1.5) rotate(360deg);
+    -o-transform: scale(1.5) rotate(360deg);
+}
+.show-button {
+    opacity: 1;
+    border: none;
+    border-radius: 50%;
+    /*Menjadilebihtransparan*/transform: scale(1);
+    /*Ukurantomboltetapsaatterlihat*/color: rgb(255, 221, 221);
+    background-color: #bb8b8b;
+    border-color: #fcfdfd;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+footer {
+    background-color: #333; /* Warna latar belakang footer */
+    color: white; /* Warna teks footer */
+    text-align: center;
+    padding: 0px 0; /* Padding atas dan bawah footer */
+}
